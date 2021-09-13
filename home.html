@@ -19,7 +19,7 @@
 <script type="module">
     import navbar from './components/navbar.js';
 
-    import { getData, append } from './scripts/getData.js'
+    import { getData, Append } from './scripts/getData.js'
     console.log("navbar:", navbar)
 
     let div = document.createElement("div");
@@ -31,6 +31,6 @@
             console.log("response: ", response);
             let place = document.getElementById("data2");
 
-            append(response, place);
+            Append(response, place);
         })
 </script>

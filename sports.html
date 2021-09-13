@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,27 +8,31 @@
     <title>Document</title>
 </head>
 <link rel="stylesheet" href="CSS/style.css">
+
 <body>
     <div id="data2"></div>
-    
+
 </body>
+
 </html>
+
+
 
 <script type="module">
     import navbar from './components/navbar.js';
 
-    import {getData,append} from './scripts/getData.js'
-    console.log("navbar:" , navbar)
+    import { getData, Append } from './scripts/getData.js'
+    console.log("navbar:", navbar)
 
     let div = document.createElement("div");
     div.innerHTML = navbar();
     document.body.prepend(div);
 
-    getData(' https://newsapi.org/v2/top-headlines?country=us&apiKey=2fabfef5ca9647a29d19b7b13a5cf3aa')
-    .then((response) => {
-        console.log("response: " , response);
-        let  place = document.getElementById("data2");
+    getData('https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=2fabfef5ca9647a29d19b7b13a5cf3aa')
+        .then((response) => {
+            console.log("response: ", response);
+            let place = document.getElementById("data2");
 
-        append(response,place);
-    })
+            Append(response, place);
+        })
 </script>

@@ -11,7 +11,7 @@ async function getData(url) {
   //  }
 }
 
-function append(data, place) {
+function Append(data, place) {
   data.articles.forEach((el) => {
     let div = document.createElement("div");
 
@@ -41,4 +41,4 @@ function append(data, place) {
   });
 }
 
-export { getData, append };
+export { getData, Append };
