@@ -18,7 +18,7 @@ function append(data, place) {
     let p_name = document.createElement("h3");
 
     let p_price = document.createElement("p");
-    let p_url = document.createElement("p");
+    let p_url = document.createElement("a");
 
     let img = document.createElement("img");
 
@@ -27,7 +27,13 @@ function append(data, place) {
     p_name.innerText = el.content;
 
     p_price.innerText = el.title;
-    p_url.innerText = el.url;
+    let curl = el.url;
+    console.log(curl)
+    var link = document.createTextNode(curl);
+    p_url.appendChild(link);
+    p_url.title = curl;
+    p_url.href = curl;
+   // p_url.href = el.url;
 
     div.append(img, p_name, p_price, p_url);
 
