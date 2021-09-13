@@ -8,6 +8,7 @@
 </head>
 <link rel="stylesheet" href="CSS/style.css">
 <body>
+    <div id="data2"></div>
     
 </body>
 </html>
@@ -15,7 +16,7 @@
 <script type="module">
     import navbar from './components/navbar.js';
 
-    import {getData} from './scripts/getData.js'
+    import {getData,append} from './scripts/getData.js'
     console.log("navbar:" , navbar)
 
     let div = document.createElement("div");
@@ -24,6 +25,9 @@
 
     getData(' https://newsapi.org/v2/top-headlines?country=us&apiKey=2fabfef5ca9647a29d19b7b13a5cf3aa')
     .then((response) => {
-        console.log("response: " , response)
+        console.log("response: " , response);
+        let  place = document.getElementById("data2");
+
+        append(response,place);
     })
 </script>
